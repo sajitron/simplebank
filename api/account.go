@@ -10,10 +10,12 @@ import (
 
 type CreateAccountRequest struct {
 	Owner    string `json:"owner" binding:"required"`
-	Currency string `json:"currency" binding:"required,oneof=USD EUR"`
+	Currency string `json:"currency" binding:"required,currency"`
 }
 
-// reateAccount creates an account and stores it in the DB
+// we are adding `currency` in the validation because we have a currency validator in server.go
+
+// createAccount creates an account and stores it in the DB
 func (server *Server) createAccount(ctx *gin.Context) {
 	var req CreateAccountRequest
 	if err := ctx.ShouldBindJSON(&req); err != nil {
