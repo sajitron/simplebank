@@ -37,4 +37,7 @@ server:
 mock:
 	mockgen -package mockdb -destination db/mock/store.go github.com/sajitron/simplebank/db/sqlc Store
 
-.PHONY: postgres createdb dropdb migrateup migratedown sqlc test server mock startpg stoppg migrateup1 migratedown1
+buildimage:
+	docker build -t simplebank:latest .
+
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc test server mock startpg stoppg migrateup1 migratedown1 buildimage
