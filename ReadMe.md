@@ -15,7 +15,7 @@ After running `make sqlc`, don't forget to run `make mock` to update the store
 ### Using DbDocs
 
 ```
-npm install -g dbdocs
+npm install --location=global dbdocs
 ```
 
 1. Copy DB schema from [Db Diagram](https://dbdiagram.io)
@@ -23,3 +23,11 @@ npm install -g dbdocs
 3. Run `dbdocs login`
 4. Run `dbdocs build doc/db.dbml`
 5. Run `dbdocs password --set <password> --project <project_name>` to set the password
+
+### Generating SQL Schema
+
+```
+npm install --location=global @dbml/cli
+```
+1. Run `dbml2sql --postgres -o <path_to_output> <dbml_source_file>`
+   1. E.g. `dbml2sql --postgres -o doc/schema.sql doc/dbml`
