@@ -31,3 +31,13 @@ npm install --location=global @dbml/cli
 ```
 1. Run `dbml2sql --postgres -o <path_to_output> <dbml_source_file>`
    1. E.g. `dbml2sql --postgres -o doc/schema.sql doc/dbml`
+
+
+## GRPC
+
+- Run `brew install protobuf`
+- Run `protoc --version`
+- Install go plugins from [here](https://grpc.io/docs/languages/go/quickstart/)
+- Copy proto3 settings from the plugin documentation in vscode. 
+- Go to preferences > settings, search for "proto3", and select "edit in settings.json"
+- Run `go mod tidy` to take care of missing packages

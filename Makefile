@@ -54,4 +54,10 @@ buildimage:
 runcontainer:
 	docker run --name simplebank -p 8080:8080 -e GIN_MODE=release -e DB_SOURCE="postgresql://root:secret@postgres12:5432/simple_bank?sslmode=disable" simplebank:latest
 
-.PHONY: network postgres createdb dropdb migrateup migratedown sqlc test server mock startpg stoppg migrateup1 migratedown1 buildimage runcontainer dbdocs dbschema
+proto:
+	rm -f pb/*.go
+	protoc --proto_path=proto --go_out=pb --go_opt=paths=source_relative \
+	--go-grpc_out=pb --go-grpc_opt=paths=source_relative \
+	proto/*.proto
+
+.PHONY: network postgres createdb dropdb migrateup migratedown sqlc test server mock startpg stoppg migrateup1 migratedown1 buildimage runcontainer dbdocs dbschema proto
