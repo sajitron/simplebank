@@ -46,3 +46,6 @@ npm install --location=global @dbml/cli
 
 - Download [here](https://github.com/ktr0731/evans)
 - RUn with `evans --host localhost --port <port_number e.g. 9090> -r repl`
+
+### gRPC Gateway
+- Download [here](https://github.com/grpc-ecosystem/grpc-gateway)
