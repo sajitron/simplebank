@@ -41,3 +41,8 @@ npm install --location=global @dbml/cli
 - Copy proto3 settings from the plugin documentation in vscode. 
 - Go to preferences > settings, search for "proto3", and select "edit in settings.json"
 - Run `go mod tidy` to take care of missing packages
+
+### Evans Cli
+
+- Download [here](https://github.com/ktr0731/evans)
+- RUn with `evans --host localhost --port <port_number e.g. 9090> -r repl`
