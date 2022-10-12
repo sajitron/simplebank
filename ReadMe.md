@@ -49,3 +49,15 @@ npm install --location=global @dbml/cli
 
 ### gRPC Gateway
 - Download [here](https://github.com/grpc-ecosystem/grpc-gateway)
+
+### Generate and serve swagger documentation
+- Update the `make proto` command
+- Visit [swagger](https://github.com/swagger-api/swagger-ui)
+- Clone the repo and copy the items in the _dist_ folder
+- Paste them into the _swagger_ folder
+- Update the _url_ field in _swagger-initializer_ to point to the location of our generated _swagger.json_ file
+- Run `go install github.com/rakyll/statik`
+- Update makefile (proto)
+- Run `make proto`
+- Add blank import e.g. `_"github.com/sajitron/simplebank/doc/statik"` to _main.go_
+- Update `main.go` to serve the static files
