@@ -59,5 +59,6 @@ npm install --location=global @dbml/cli
 - Run `go install github.com/rakyll/statik`
 - Update makefile (proto)
 - Run `make proto`
+- Update `tools.go` with import for _statik_
 - Add blank import e.g. `_"github.com/sajitron/simplebank/doc/statik"` to _main.go_
 - Update `main.go` to serve the static files
