@@ -62,3 +62,11 @@ npm install --location=global @dbml/cli
 - Update `tools.go` with import for _statik_
 - Add blank import e.g. `_"github.com/sajitron/simplebank/doc/statik"` to _main.go_
 - Update `main.go` to serve the static files
+
+### Update go version
+- Visit the go [website](https://go.dev) to download the latest version
+- After installation, update the go version in the _go.mod_ and the _test.yml_ files
+- Update the base image in the _Dockerfile_
+- Run `go mod tidy` to update the packages
+- Run all tests
+- Run`docker-compose up` to confirm the new image works with docker
