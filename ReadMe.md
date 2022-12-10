@@ -70,3 +70,6 @@ npm install --location=global @dbml/cli
 - Run `go mod tidy` to update the packages
 - Run all tests
 - Run`docker-compose up` to confirm the new image works with docker
+
+### Task Queues
+- Get the [Asyncq](https://github.com/hibiken/asynq) package
