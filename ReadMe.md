@@ -73,3 +73,6 @@ npm install --location=global @dbml/cli
 
 ### Task Queues
 - Get the [Asyncq](https://github.com/hibiken/asynq) package
+
+### Sending Mail
+`go get github.com/jordan-wright/email`
