@@ -20,6 +20,7 @@ import (
 	db "github.com/sajitron/simplebank/db/sqlc"
 	_ "github.com/sajitron/simplebank/doc/statik"
 	"github.com/sajitron/simplebank/gapi"
+	"github.com/sajitron/simplebank/mail"
 	"github.com/sajitron/simplebank/pb"
 	"github.com/sajitron/simplebank/util"
 	"github.com/sajitron/simplebank/worker"
@@ -72,7 +73,8 @@ func runDBMigration(migrationURL string, dbSource string) {
 }
 
 func runTaskProcessor(redisOpt asynq.RedisClientOpt, store db.Store) {
-	taskProcessor := worker.NewRedisTaskProcessor(redisOpt, store)
+	mailer := mail.NewGmailSender("sender name", "sender address", "sender password")
+	taskProcessor := worker.NewRedisTaskProcessor(redisOpt, store, mailer)
 	log.Info().Msg("starting task processor")
 	err := taskProcessor.Start()
 	if err != nil {

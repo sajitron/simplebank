@@ -1,7 +1,7 @@
 ### To run a new migration
 
 ```
-migrate create -ext sql -dir db/migration -seq <migration_name>
+make new_migration name=<migration_name>
 ```
 
 Update the migration files
@@ -45,7 +45,7 @@ npm install --location=global @dbml/cli
 ### Evans Cli
 
 - Download [here](https://github.com/ktr0731/evans)
-- RUn with `evans --host localhost --port <port_number e.g. 9090> -r repl`
+- Run with `evans --host localhost --port <port_number e.g. 9090> -r repl`
 
 ### gRPC Gateway
 - Download [here](https://github.com/grpc-ecosystem/grpc-gateway)
