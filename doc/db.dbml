@@ -34,7 +34,7 @@ Table accounts as A {
   
   Indexes {
     owner
-    (owner, currency) [unique]
+    (owner, currency) [unique] // composite index, means every owner can have only one currency
   }
 }
 
